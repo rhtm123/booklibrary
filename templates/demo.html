@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo html</title>
+</head>
+<body>
+    <h1> Demo page </h1>
+    <h2> {{ key1 }} {{ key2 }}</h2>
+
+    {% for i in key1 %}
+        <h3> this is a value {{ i }} </h3>
+    {% endfor %}
+
+    {% if key3 %}
+
+        <h3> key3 is true </h3>
+
+    {% else %}
+        <h3>key3 is false</h3>
+
+    {% endif %}
+</body>
+</html>

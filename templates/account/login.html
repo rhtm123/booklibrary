@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    <title> Login yourself </title>
+{% endblock %}
+
+{% block css %}
+<style>
+    .input_s {
+        padding: 8px;
+        margin: 8px;
+        width: 100%;
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container" style="width: 50%;margin: auto;">
+
+    {% if is_login %}
+    <h1>User is logged now</h1>
+{% else %}
+    
+    {% if request.user.is_authenticated %}
+
+    <h1> You are already logged In. Why are you here? </h1>
+    <h2> <a href="/"> GO to home page </a> </h2>
+
+    {% else %}
+
+    <br>
+
+    <h3> Login yourself </h3>
+    <form method="post">
+        {% csrf_token %}
+        <input name="username" class="input_s" type="text" placeholder="add your username"> <br>
+        <input name="password" class="input_s"  type="password" placeholder="add your password"> <br>
+        <input class="input_s"  type="submit" >
+    </form>
+
+
+    {% endif %}
+
+
+{% endif %}
+
+</div>
+
+{% endblock %}
+
